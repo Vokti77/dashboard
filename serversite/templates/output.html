@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Images</title>
+</head>
+<body>
+    <h1>Output Images</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image Name</th>
+                <th>Image Original</th>
+                <th>Image Clothes</th>
+                <th>Image Mask</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image in images %}
+                <tr style="height: 50px;">
+                    <td>{{ image.image_name }}</td>
+                    <td style="height: 30px;"><img style="width: 100px ;" src="{{ image.image_originals.url }}" alt="{{ image.image_name }} - Original"></td>
+                    <td><img style="width: 100px ;" src="{{ image.image_clothes.url }}" alt="{{ image.image_name }} - Clothes"></td>
+                    <td><img style="width: 100px ;" src="{{ image.image_masks.url }}" alt="{{ image.image_name }} - Mask"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Upload Images</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Image Name</th>
+                    <th>Image Originals</th>
+                    <th>Image Clothes</th>
+                    <th>Image Masks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="image_name"></td>
+                    <td><input type="file" name="image_originals[]" accept="image/*" multiple required></td>
+                    <td><input type="file" name="image_clothes[]" accept="image/*" multiple required></td>
+                    <td><input type="file" name="image_masks[]" accept="image/*" multiple required></td>
+                </tr>
+              
+            </tbody>
+        </table>
+    
+        <button type="submit">Upload Images</button>
+    </form>
+    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Images</title>
+</head>
+<body>
+    <h1>Upload Images</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+                                                                                                        
